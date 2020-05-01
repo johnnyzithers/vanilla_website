@@ -1,0 +1,166 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    /*  padding and borders are not set to element height */
+    box-sizing: inherit;
+    /* forcing inheritance to every element on the page */
+}
+
+html, body {
+	font-family: 'Charcoal';
+	font-size: 16px;
+}
+
+/* NAV */
+.nav {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	height: 100px;
+	padding: 0px 10px;
+	background-color: black;
+	color: white;
+}
+
+.nav .logo a {
+	text-decoration: none;
+	color: white;
+	font-size: 26px;
+	width: 100%;
+	text-transform: uppercase;
+}
+
+.nav-link-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-evenly;
+	list-style: none;
+	width: 100%;
+	padding-left: 0;
+	padding: 0 20px;
+}
+
+.nav-link-container .nav-link a {
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+}
+
+.music-list,
+.instruments-list,
+.videos-list,
+.workshops-list,
+.papers-list {
+	list-style: none;
+}
+
+/* MUSIC */
+.music-list {
+	display: flex;
+	flex-flow: row wrap;
+	
+}
+
+.music-list > li {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 10px;
+	width: 200px;
+}
+
+.music-list li img {
+	height: 200px;
+	width: 200px;
+}
+
+.music-list .title {
+	margin: 10px 0;
+}
+
+.music-list .contributions {
+	display: flex;
+	flex-flow: column wrap;
+	list-style: none;
+}
+
+/* INSTRUMENTS */
+.instruments-list {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.instruments-list > li {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 10px;
+	width: 400px;
+}
+
+.instruments-list > li img {
+	display: flex;
+	flex-flow: column nowrap;
+	height: 300px;
+	width: 400px;
+}
+
+.instruments-list > li a {
+	margin-top: 10px
+}
+
+.instruments-list > li div:last-of-type {
+	margin: 10px 0;
+}
+
+/* VIDEO */
+.videos-list {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.videos-list li {
+	margin: 10px 0;
+}
+
+/* WORKSHOP */
+.workshops-list {
+	display: flex;
+    flex-flow: column nowrap;
+}
+
+.workshops-list li {
+	display: flex;
+	margin: 10px 0;
+}
+
+.workshops-list > li img {
+	min-height: 360px;
+	max-height: 360px;
+	width: 275px;
+}
+
+.workshops-list .workshop-details {
+	display: flex;
+    flex-flow: column nowrap;
+	justify-content: center;
+	margin-left: 10px;
+}
+
+/* PAPERS */
+.papers-list {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.papers-list > li {
+	width: 30%;
+	margin: 10px;
+}
+
+.papers-list > li div:last-of-type {
+	margin-top: 30px;
+}
