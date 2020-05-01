@@ -388,6 +388,7 @@ var papersTemplate = function () {
 };
 
 var build = function () {
+  
   var app = document.querySelector("#app");
   var pageParams = params["page"];
 
