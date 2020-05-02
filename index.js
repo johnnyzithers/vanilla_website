@@ -392,6 +392,10 @@ var build = function () {
   var app = document.querySelector("#app");
   var pageParams = params["page"];
 
+  if (pageParams === undefined) {
+    return (app.innerHTML = homeTemplate());
+  }
+
   if (pageParams === "home") {
     return (app.innerHTML = homeTemplate());
   }
