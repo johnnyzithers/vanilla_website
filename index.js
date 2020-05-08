@@ -251,12 +251,11 @@ var data = {
         "This paper outlines the motivation, design and developmentof a self-tuning, robotic monochord. This work presentsa portable, autonomous musical robotic string instrumentintended for creative and pedagogical use. Detailed testsperformed to optimize technical aspects of STARI are describedto highlight usability and performance specificationsfor artists and educators. STARI is intended to beopen-source so that the results are reproducible and expandableusing common components with minimal financialconstraints. Because the field of musical robotics is sonew, standardized systems need to be designed from existingparadigms. Such paradigms are typically singular innature, solely reflecting the idiosyncrasies of the artist andoften difficult to reproduce. STARI is an attempt to standardizecertain existing actuated string techniques in orderto establish a formal system for experimentation and pedagogy.",
     },
   ],
-  contact: "duncanmacconnell@gmail.com",
 };
 
 var homeTemplate = function () {
   return (
-    '<img src="./assets/mirror.jpg"/>'
+    ''
   );
 };
 
@@ -391,37 +390,24 @@ var build = function () {
   
   var app = document.querySelector("#app");
   var pageParams = params["page"];
-
-  if (pageParams === undefined) {
-    return (app.innerHTML = homeTemplate());
-  }
+ 
 
   if (pageParams === "home") {
     return (app.innerHTML = homeTemplate());
-  }
-
-  if (pageParams === "music") {
+  }else if (pageParams === "music") {
     return (app.innerHTML = musicTemplate());
-  }
-
-  if (pageParams === "instruments") {
+  } else if (pageParams === "instruments") {
     return (app.innerHTML = instrumentsTemplate());
-  }
-
-  if (pageParams === "videos") {
+  } else if (pageParams === "videos") {
     return (app.innerHTML = videosTemplate());
-  }
-
-  if (pageParams === "workshops") {
+  } else if (pageParams === "workshops") {
     return (app.innerHTML = workshopsTemplate());
-  }
-
-  if (pageParams === "papers") {
+  } else if (pageParams === "papers") {
     return (app.innerHTML = papersTemplate());
-  }
-
-  if (pageParams === "contact") {
+  } else if (pageParams === "contact") {
     return (app.innerHTML = "<br><div>duncan macconnell @ gmail</div>");
+  } else {
+    return (app.innerHTML = homeTemplate());
   }
 };
 
