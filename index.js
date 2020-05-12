@@ -255,7 +255,7 @@ var data = {
 
 var homeTemplate = function () {
   return (
-    ''
+    '<script src="./homeSketch.js"></script>'
   );
 };
 
@@ -393,8 +393,16 @@ var build = function () {
  
 
   if (pageParams === "home") {
+    var newScript = document.createElement("script");
+    newScript.src = "./homeSketch.js";
+    app.appendChild(newScript);
     return (app.innerHTML = homeTemplate());
   }else if (pageParams === "music") {
+
+    var newScript = document.createElement("script");
+    newScript.src = "./musicSketch.js";
+    app.appendChild(newScript);
+
     return (app.innerHTML = musicTemplate());
   } else if (pageParams === "instruments") {
     return (app.innerHTML = instrumentsTemplate());
@@ -407,6 +415,9 @@ var build = function () {
   } else if (pageParams === "contact") {
     return (app.innerHTML = "<br><div>duncan macconnell @ gmail</div>");
   } else {
+    var newScript = document.createElement("script");
+    newScript.src = "./homeSketch.js";
+    app.appendChild(newScript);
     return (app.innerHTML = homeTemplate());
   }
 };
