@@ -38,7 +38,7 @@ var data = {
       image: "2-if1.png",
       title: 'Iceberg Ferg - "Waiting On"',
       url: "https://icebergferg.bandcamp.com/album/waiting-on",
-      contributions: ["recording", "production", "guitar"],
+      contributions: ["recording", "production", "tiny bit of guitar"],
     },
     {
       image: "3-if2.png",
@@ -93,7 +93,7 @@ var data = {
       url: 'https://southwoods.bandcamp.com/album/southwoods-3',
       contributions: [
         "guitar",
-        "homaemade instruments",
+        "homemade instruments",
         "recording",
         "production",
       ],
@@ -190,6 +190,7 @@ var data = {
     },
   ],
   videos: [
+    '<iframe width="480" height="320" src="https://www.youtube.com/embed/NHpdCU6qUds" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     '<iframe width="480" height="320" src="https://www.youtube-nocookie.com/embed/jtGZChXCKFw?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     '<iframe width="480" height="320" src="https://www.youtube.com/embed/2qxOmbaJjh4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
     '<iframe width="480" height="320" src="https://www.youtube.com/embed/o4Nza7o8PUA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
@@ -198,13 +199,13 @@ var data = {
   ],
   workshops: [
     {
-      image: "work0.jpg",
+      dir: "workshop1",
       title: "Build Your Own MIDI Instrument / Digital Synthesizer Workshop",
       description:
         "Participants took place in a two day workshop designed to teach the fundamental concepts and technologies required to design and build new MIDI controller and digital synthesizer instruments. Instrument design techniques, user interaction, and musical performance techniques were discussed within the context of traditional, modern, and experimental music instrument design. Participants left with a new instrument they designed and built themselves.",
     },
     {
-      image: "work0.png",
+      dir: "workshop2",
       title: "Build Your Own Capacitive Touch MIDI Instrument",
       description:
         "This workshop centered around exploring the possible configurations of copper tape to capacitively sense interaction on custom designed MIDI controllers. Participants learned the fundamentals of the technologies required to design, build, and construct new MIDI instruments; electronics, digital hardware, programming, and interaction design. Participants also created a custom MIDI controller during the course of the workshop.",
@@ -334,24 +335,37 @@ var videosTemplate = function () {
 
 var workshopsTemplate = function () {
   return (
+    
     '<ul class="workshops-list">' +
     data.workshops
       .map(function (item) {
-        var { image, title, description } = item;
+        var { dir, title, description } = item;
         return (
-          "<li>" +
-          '<img src="./assets/' +
-          image +
-          '" />' +
-          '<div class="workshop-details">' +
-          "<div>" +
-          title +
-          "</div>" +
-          "<div>" +
-          description +
-          "</div>" +
-          "</div>" +
-          "</li>"
+
+          '<div class="each-workshop">' +
+              
+              '<div class="workshop-image-col">' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work0.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work1.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work2.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work3.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work4.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work5.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work6.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work7.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work8.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work9.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work10.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work11.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work12.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work13.png' + '"/><br>' + 
+              '<img class="workshop-thum" src="./assets/' + dir + '/work14.png' + '"/><br>' + 
+              '</div>' +
+
+            '<div class="workshop-details">' +
+              '<h2>' + title + '</h2>' + description +
+            '</div>' +
+            '</div>'
         );
       })
       .join("") +
@@ -399,9 +413,9 @@ var build = function () {
     return (app.innerHTML = homeTemplate());
   }else if (pageParams === "music") {
 
-    var newScript = document.createElement("script");
-    newScript.src = "./musicSketch.js";
-    app.appendChild(newScript);
+    // var newScript = document.createElement("script");
+    // newScript.src = "./musicSketch.js";
+    // app.appendChild(newScript);
 
     return (app.innerHTML = musicTemplate());
   } else if (pageParams === "instruments") {

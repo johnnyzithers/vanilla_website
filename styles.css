@@ -133,22 +133,37 @@ body {background-color: lightgoldenrodyellow ;}
     flex-flow: column nowrap;
 }
 
-.workshops-list li {
+.workshop-image-col {
 	display: flex;
-	margin: 10px 0;
+	/* border: 10px dashed rgb(238, 3, 3); */
+	flex-flow: column;
+	min-height: 350px;
+	max-height: 450px;
+	max-width: 50%;
+	overflow-y: scroll;
+	overflow-x: auto;
 }
 
-.workshops-list > li img {
-	min-height: 360px;
-	max-height: 360px;
-	width: 275px;
+.workshops-list .each-workshop {
+	display: flex; 
+ 	flex-direction: row;
+
+}
+
+
+.workshops-list .workshop-thum {
+	display: block;
+	/* min-height: 360px; */
+	/* max-height: 50px; */
+	height: auto;
+	object-fit: cover;
 }
 
 .workshops-list .workshop-details {
 	display: flex;
     flex-flow: column nowrap;
 	justify-content: center;
-	margin-left: 10px;
+	margin: 10px;
 }
 
 /* PAPERS */

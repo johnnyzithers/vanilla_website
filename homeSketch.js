@@ -2,10 +2,12 @@ let img;
 let box1;
 let oriya; 
 let colours = [];
-let text1 = "Please be advised I use this website to experiment with web technologies which I am not experienced with :)";
+let text1 = "Please be advised I use this website to experiment with web technologies which I am not experienced with";
+let text2 = "get in touch with me at duncanmacconnell @ gmail . com  :)";
 
 function preload() {
     img = loadImage('assets/mirror.jpg');    
+    img1 = loadImage('assets/duck.png');    
 }
 
 function setup() {
@@ -13,26 +15,31 @@ function setup() {
     oriya = loadFont('assets/oriya/oriya.ttf');
     colours[0] = color(255,226,119);
     box1 = new Box(120, 80, 400, 100, colours[0], text1);
+    box2 = new Box(166, 280, 400, 50, colours[0], text2);
 }
 
 function draw() {
     image(img, 0, 0);
-    ellipse(1440, 620, 80, 80);
+    // ellipse(1440, 620, 80, 80);
     
     box1.over();
     box1.update();
     box1.draw();
 
+    box2.over();
+    box2.update();
+    box2.draw();
+
 }
 
 function mousePressed() {
     box1.pressed();
-    box1.pressed();
+    box2.pressed();
 }
 
 function mouseReleased() {
     box1.released();
-    box1.released();
+    box2 .released();
 }
 
 
@@ -93,7 +100,6 @@ class Box {
         stroke(150,150,150);
         strokeWeight(1);
         rect(this.x+this.w-15, this.y, 15, 15);
-
         pop();
     }
     
